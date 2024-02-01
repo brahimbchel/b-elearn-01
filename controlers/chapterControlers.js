@@ -31,7 +31,7 @@ const getChapter = async (req, res) => {
 }
 
 const createChapter = async (req, res) => {
-  const { teacher_id, title, description, } = req.body
+  const { teacher_id, title, description, subscribers_id , editers_id , videos , files } = req.body
 
   if (!title) {
     return res.status(400).json({ error: 'Title are required' })
@@ -40,8 +40,8 @@ const createChapter = async (req, res) => {
   try {
     const chapter = await Chapter.create({
       teacher_id,
-      subscribers_id: [],
-      editors_id: [],
+      subscribers_id,
+      editers_id,
       title,
       description,
       videos: [],

@@ -12,7 +12,7 @@ const chapterSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
     }],
-    editors_id:  [{
+    editers_id:  [{
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
   }],
